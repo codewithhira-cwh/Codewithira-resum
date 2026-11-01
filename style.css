@@ -1,0 +1,312 @@
+/* DEVELOPER FEEL CSS - HIRA - Only CSS, No HTML Change */
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+  --bg:#f6f1e8;
+  --card:#ffffff;
+  --card-dark:#0e0e10;
+  --border:#e8e2d5;
+  --text:#111111;
+  --muted:#9a9590;
+  --blue:#2563eb;
+  --green:#16a34a;
+  --violet:#7c3aed;
+  --pill:18px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Geist Mono','JetBrains Mono',monospace !important;
+  background:var(--bg) !important;
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Add terminal dots via CSS ::before */
+header{
+  background:transparent !important;
+  border:none !important;
+  padding:24px 0 12px !important;
+  backdrop-filter:none !important;
+}
+.wrap.nav{
+  max-width:860px !important;
+  margin:0 auto !important;
+  padding:0 24px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  gap:12px !important;
+}
+.brand{
+  font-family:'Geist Mono',monospace !important;
+  font-size:14px !important;
+  font-weight:500 !important;
+  letter-spacing:0.02em !important;
+  color:var(--text) !important;
+  background:var(--card) !important;
+  border:1.5px solid var(--border) !important;
+  border-radius:var(--pill) !important;
+  padding:14px 20px !important;
+  width:100% !important;
+  max-width:100% !important;
+  box-shadow:0 1px 2px rgba(0,0,0,0.04) !important;
+  position:relative !important;
+  display:flex !important;
+  align-items:center !important;
+}
+.brand::before{
+  content:'● ● ●';
+  font-size:8px;letter-spacing:4px;
+  color:#d4cfc6;
+  margin-right:14px;
+  font-family:monospace;
+}
+.brand::after{
+  content:'';
+  width:8px;height:14px;
+  background:var(--text);
+  margin-left:4px;
+  animation:blink 1s step-end infinite;
+  display:inline-block;
+}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+.brand span{display:none !important}
+
+nav{display:flex !important;gap:8px !important;flex-wrap:wrap !important}
+nav a{
+  font-family:'Geist Mono',monospace !important;
+  font-size:11px !important;
+  color:var(--muted) !important;
+  background:var(--card) !important;
+  border:1px solid var(--border) !important;
+  border-radius:999px !important;
+  padding:8px 14px !important;
+  text-decoration:none !important;
+  transition:all 0.2s !important;
+}
+nav a::before{content:'~/';opacity:0.5;margin-right:2px}
+nav a:hover,nav a.active{
+  color:var(--text) !important;
+  border-color:var(--text) !important;
+  background:var(--card) !important;
+}
+nav a.active::before{content:'● ~/';color:var(--green)}
+
+.wrap{max-width:860px !important;margin:0 auto !important;padding:0 24px !important}
+main.wrap{padding:12px 24px 80px !important}
+
+/* All cards as code pills */
+.hero{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:12px !important;
+  margin:12px 0 24px !important;
+}
+.hero>div:first-child{display:contents !important}
+.hero h1{
+  font-family:'Geist Mono',monospace !important;
+  font-size:15px !important;
+  font-weight:500 !important;
+  line-height:1.5 !important;
+  letter-spacing:0 !important;
+  background:var(--card) !important;
+  border:1.5px solid var(--border) !important;
+  border-radius:var(--pill) !important;
+  padding:18px 20px !important;
+  color:var(--text) !important;
+  -webkit-text-fill-color:var(--text) !important;
+  position:relative !important;
+}
+.hero h1::before{
+  content:'01 // hero.tsx';font-size:9px;color:var(--muted);position:absolute;top:-8px;left:20px;background:var(--bg);padding:0 6px;letter-spacing:0.08em;
+}
+.hero h1 br{display:none !important}
+.hero h1 em{
+  font-style:normal !important;
+  color:var(--blue) !important;
+  -webkit-text-fill-color:var(--blue) !important;
+  font-weight:600 !important;
+}
+
+.lead{
+  font-family:'Geist Mono',monospace !important;
+  font-size:12px !important;
+  line-height:1.7 !important;
+  color:var(--muted) !important;
+  background:var(--card) !important;
+  border:1.5px solid var(--border) !important;
+  border-radius:var(--pill) !important;
+  padding:16px 20px !important;
+  max-width:100% !important;
+}
+.lead::before{
+  content:'// BCA student • 2y exp • SAP';font-size:9px;color:var(--muted);display:block;margin-bottom:6px;
+}
+
+.actions{display:flex !important;gap:8px !important;flex-wrap:wrap !important;margin:0 !important}
+.btn{
+  font-family:'Geist Mono',monospace !important;
+  font-size:11px !important;
+  font-weight:500 !important;
+  border-radius:999px !important;
+  padding:10px 18px !important;
+  border:1.5px solid var(--text) !important;
+  background:var(--text) !important;
+  color:var(--card) !important;
+  text-decoration:none !important;
+  box-shadow:none !important;
+}
+.btn::before{content:'$ ';opacity:0.7}
+.btn.secondary{
+  background:var(--card) !important;
+  color:var(--text) !important;
+  border-color:var(--border) !important;
+}
+.btn:hover{transform:none !important;box-shadow:0 2px 8px rgba(0,0,0,0.08) !important}
+
+.quick-links{display:flex !important;gap:8px !important;margin-top:4px !important}
+.quick-links a{
+  font-family:'Geist Mono',monospace !important;
+  font-size:10px !important;
+  color:var(--muted) !important;
+  background:var(--card) !important;
+  border:1px solid var(--border) !important;
+  border-radius:999px !important;
+  padding:6px 12px !important;
+  text-decoration:none !important;
+}
+
+/* Profile Card - as code comment */
+.profile-card{
+  width:100% !important;height:auto !important;
+  border-radius:var(--pill) !important;
+  background:var(--card) !important;
+  border:1.5px solid var(--border) !important;
+  padding:18px 20px !important;
+  box-shadow:0 1px 2px rgba(0,0,0,0.04) !important;
+  display:flex !important;flex-direction:row !important;
+  align-items:center !important;gap:14px !important;
+  text-align:left !important;
+}
+.profile-card::before{display:none !important}
+.avatar{
+  width:40px !important;height:40px !important;
+  border-radius:50% !important;
+  background:var(--bg) !important;
+  border:1.5px solid var(--border) !important;
+  color:var(--text) !important;
+  font-size:12px !important;
+  font-weight:500 !important;
+  box-shadow:none !important;
+  margin:0 !important;
+}
+.profile-card h2{font-family:'Geist Mono',monospace !important;font-size:13px !important;font-weight:500 !important;margin:0 !important}
+.profile-card p{font-size:10px !important;color:var(--muted) !important}
+.status{
+  margin-left:auto !important;margin-top:0 !important;
+  font-size:9px !important;
+  background:var(--bg) !important;
+  border:1px solid var(--border) !important;
+  padding:5px 10px !important;
+}
+.dot{width:5px !important;height:5px !important}
+
+/* Section */
+.page-intro{margin-bottom:20px !important;text-align:left !important}
+.page-intro h1{
+  font-family:'Geist Mono',monospace !important;
+  font-size:16px !important;
+  font-weight:500 !important;
+  background:var(--card) !important;
+  border:1.5px solid var(--border) !important;
+  border-radius:var(--pill) !important;
+  padding:16px 20px !important;
+  display:block !important;
+  -webkit-text-fill-color:var(--text) !important;
+}
+.page-intro h1 em{color:var(--blue) !important;-webkit-text-fill-color:var(--blue) !important}
+.page-intro .lead{margin-top:12px !important}
+
+.section-head{margin-bottom:16px !important;padding:0 !important;border:none !important;display:block !important}
+.section-title{
+  font-family:'Geist Mono',monospace !important;
+  font-size:11px !important;font-weight:500 !important;
+  background:var(--card) !important;
+  border:1px solid var(--border) !important;
+  border-radius:999px !important;
+  padding:6px 14px !important;
+  display:inline-block !important;
+}
+.section-head p{font-family:'Geist Mono',monospace !important;font-size:9px !important;color:var(--muted) !important;margin-top:8px !important}
+
+.grid{display:flex !important;flex-direction:column !important;gap:10px !important}
+.card{
+  width:100% !important;height:auto !important;
+  border-radius:var(--pill) !important;
+  background:var(--card) !important;
+  border:1.5px solid var(--border) !important;
+  padding:16px 20px !important;
+  box-shadow:0 1px 2px rgba(0,0,0,0.04) !important;
+  text-align:left !important;
+  align-items:flex-start !important;
+  justify-content:flex-start !important;
+}
+.card::before{display:none !important}
+.card:hover{transform:none !important;box-shadow:0 2px 8px rgba(0,0,0,0.06) !important;border-color:#d0d0cc !important}
+
+.meta{
+  font-size:9px !important;
+  color:var(--muted) !important;
+  background:var(--bg) !important;
+  border:1px solid var(--border) !important;
+  border-radius:999px !important;
+  padding:3px 8px !important;
+  display:inline-block !important;
+  margin-bottom:10px !important;
+}
+.meta::before{content:'// ';opacity:0.6}
+
+.card h3{font-family:'Geist Mono',monospace !important;font-size:13px !important;font-weight:500 !important;margin-bottom:6px !important}
+.card p{font-family:'Geist Mono',monospace !important;font-size:11px !important;color:var(--muted) !important;line-height:1.6 !important;max-width:100% !important}
+
+.chips{gap:6px !important;max-width:100% !important;margin-top:10px !important}
+.chip{
+  font-family:'Geist Mono',monospace !important;
+  font-size:9px !important;
+  background:var(--bg) !important;
+  border:1px solid var(--border) !important;
+  color:var(--muted) !important;
+  border-radius:999px !important;
+  padding:4px 10px !important;
+}
+.chip::before{content:'#';opacity:0.5;margin-right:2px}
+
+.timeline{display:flex !important;flex-direction:column !important;gap:10px !important}
+.timeline .card{width:100% !important;height:auto !important}
+
+.contact-grid{display:flex !important;flex-direction:column !important;gap:10px !important;margin:20px 0 !important}
+.contact-item{
+  width:100% !important;height:auto !important;
+  border-radius:var(--pill) !important;
+  background:var(--card) !important;
+  border:1.5px solid var(--border) !important;
+  padding:14px 20px !important;
+  text-align:left !important;
+  align-items:flex-start !important;
+  box-shadow:0 1px 2px rgba(0,0,0,0.04) !important;
+}
+.contact-item:hover{transform:none !important;box-shadow:0 2px 8px rgba(0,0,0,0.06) !important}
+.contact-item small{font-size:9px !important;color:var(--muted) !important;text-transform:uppercase !important;letter-spacing:0.08em !important}
+.contact-item strong{font-size:12px !important;font-weight:500 !important;color:var(--text) !important}
+
+.facts{display:flex !important;flex-direction:column !important;gap:8px !important;margin-top:12px !important;max-width:100% !important}
+.fact{text-align:left !important}
+.fact small{font-size:9px !important}
+.fact strong{font-size:11px !important}
+
+footer{border-top:1px solid var(--border) !important;background:transparent !important;margin-top:40px !important;padding:16px 0 !important;backdrop-filter:none !important}
+.foot{max-width:860px !important;margin:0 auto !important;padding:0 24px !important;font-family:'Geist Mono',monospace !important;font-size:10px !important;color:var(--muted) !important}
+.foot a{color:var(--muted) !important}
+
+.orbit{display:none !important}
